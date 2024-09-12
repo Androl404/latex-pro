@@ -77,7 +77,7 @@ Then, you'll have to create your website in Apache, create your configuration fi
 
 The last step is about creating the `projects` and `archives` folder. Make sure to use `projects` and `archives` as folder's name and not mispell them. Make sure then the user `www-data` has full access to these two folders in order to be able to create and modify LaTeX projets.
 
-> [INFO]
+> [!INFO]
 > Don't forget to add your LaTeX distribution installation to the `www-data` PATH in the file `/etc/apache2/envvars`. More about that is this [StackOverflow answer](https://askubuntu.com/questions/204159/add-path-to-path-environment-variable-for-www-data).
 
 # Reporting issues and contributing
