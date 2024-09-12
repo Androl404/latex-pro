@@ -1,0 +1,23 @@
+#content {
+    margin: 30px;
+    font-size: 15pt;
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16pt;
+    font-family: "Computer-Modern-Regular", "Arial", sans-serif;
+}
+
+input:focus {
+    border-bottom: 2px solid purple;
+}
+
+#content-doc .existing-projects td a i {
+    font-size: 20pt; /* To change the size of the actions icons for admin-control-panel.php */
+}
+

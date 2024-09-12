@@ -1,0 +1,28 @@
+@font-face {
+    font-family: Computer-Modern-Regular;
+    src: url("../fonts/cmunrm.ttf");
+}
+
+@font-face {
+    font-family: Computer-Modern-Bold;
+    src: url("../fonts/cmunbx.ttf");
+}
+
+@font-face {
+    font-family: Computer-Modern-Italic;
+    src: url("../fonts/cmunti.ttf");
+}
+
+@font-face {
+    font-family: Computer-Modern-Mono;
+    src: url("../fonts/lmmono12-regular.otf");
+}
+
+.bold {
+    font-family: "Computer-Modern-Bold", "Arial", sans-serif;
+}
+
+.code {
+    font-family: "Computer-Modern-Mono", "Arial", sans-serif;
+}
+

@@ -1,0 +1,449 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: "Computer-Modern-Regular", "Arial", sans-serif;
+    font-size: 15pt;
+    box-sizing: border-box;
+    max-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* HEADER */
+header {
+    background-color: #1b222c;
+    width: 100%;
+    color: white;
+    font-family: "Computer-Modern-Bold", "Arial", sans-serif;
+    font-size: 14pt;
+    display: flex;
+    height: 40px;
+}
+
+header>div.menu {
+    cursor: pointer;
+}
+
+header>div.menu:hover {
+    background: #2f3a4c;
+}
+
+header>div.regular-text {
+    font-family: "Computer-Modern-Regular", "Arial", sans-serif;
+}
+
+header>div:not(.home) {
+    padding: 6px 15px 0px 15px;
+    border-right: 1px solid darkgray;
+}
+
+header>div.home {
+    border-right: 1px solid darkgray;
+    padding: 0;
+    margin: 0;
+}
+
+header>div.home>div {
+    padding: 6px 15px 0px 15px;
+    display: block;
+    height: 40px;
+    margin: 0;
+    cursor: pointer;
+}
+
+header>div.home>div:hover {
+    background: #2f3a4c;
+}
+
+/* EDITOR'S MENU */
+#menu {
+    position: absolute;
+    height: calc(100vh - 40px);
+    background: #1b222c;
+    width: 15vw;
+    display: none;
+    color: white;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+#menu h1 {
+    font-size: 20pt;
+    font-family: "Computer-Modern-Bold", "Arial", sans-serif;
+    margin: 20px 20px 15px 20px;
+    padding-bottom: 5px;
+    border-bottom: 0.5px solid #27303f;
+}
+
+#menu .compart-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#menu div .compart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 150px;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#menu div .compart span {
+    text-align: center;
+}
+
+#menu div .compart:hover {
+    background: #495365;
+}
+
+#menu div.menu-compart {
+    margin: 20px;
+}
+
+#menu div.menu-compart a.help {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#menu div.menu-compart a.help i.bx {
+    padding-right: 9px;
+}
+
+#menu div.menu-compart a.help:hover {
+    background: #495365;
+}
+
+/* EDITOR */
+.code-sup {
+    display: flex;
+    height: fit-content;
+}
+
+.code-sup .tree-actions {
+    width: 15vw;
+}
+
+#CodeBlock {
+    width: 40vw;
+    resize: horizontal;
+    overflow: auto;
+    margin-left: 6px;
+}
+
+.resize-bar {
+    width: 6px;
+    background: #1b222c;
+    top: 40px;
+    cursor: col-resize;
+    height: calc(100vh - 40px);
+    position: absolute;
+    z-index: 999;
+}
+
+.resize-bar::before {
+    content: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='18'%3E%3Cpath d='M2 0h3v3H2zm0 5h3v3H2zm0 5h3v3H2zm0 5h3v3H2z' style='fill:%239da7b7'/%3E%3C/svg%3E");
+    color: white;
+    position: absolute;
+    top: 48%;
+}
+
+#vimStatus {
+    font-family: "Computer-Modern-Mono", "Arial", sans-serif;
+    color: white;
+    font-size: 15pt;
+    height: 30px;
+    background-color: #1b222c;
+    display: none;
+}
+
+.code-sup .pdf-reader {
+    width: 45vw;
+    /* height: 85vh; */
+    height: calc(100vh - 40px - 30px);
+    flex-grow: 1;
+}
+
+.code-sup .pdf-reader iframe {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.code-sup .pdf-reader .pdf-bar {
+    height: 30px;
+    background: #2f3a4c;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.code-sup .pdf-reader .pdf-compile {
+    display: flex;
+}
+
+#compile {
+    outline: none;
+    background: green;
+    color: white;
+    border: none;
+    height: 100%;
+    font-size: 15pt;
+    padding: 0px 10px;
+    font-family: "Computer-Modern-Bold", "Arial", sans-serif;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 99;
+}
+
+#compile-icon.rotate {
+    animation: linear 1s rotate-compile-icon infinite;
+}
+
+@keyframes rotate-compile-icon {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.code-sup .pdf-reader .pdf-compile::after {
+    content: " ";
+    background: green;
+    border-radius: 35px;
+    height: 100%;
+    margin-left: -20px;
+    width: 30px;
+    z-index: 1;
+}
+
+#compile i {
+    color: white;
+    font-size: 20pt;
+}
+
+#compile span {
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+
+#compile span::before {
+    content: "";
+    margin-left: 10px;
+}
+
+#view-log {
+    cursor: pointer;
+    color: white;
+    padding: 3px;
+    font-size: 18pt;
+    margin-left: 7px;
+}
+
+#view-log:hover {
+    background-color: #495365;
+}
+
+#log-messages {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 45vw;
+    height: calc(100vh - 40px - 30px);
+    overflow-y: auto;
+    background: #2f3a4c;
+    color: white;
+}
+
+#log-messages .message {
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-wrap: wrap;
+}
+
+#log-messages .message div.title {
+    padding: 2px 5px;
+    font-family: "Computer-Modern-Bold", "Arial", sans-serif;
+}
+
+#log-messages .message div.file {
+    padding: 0px 5px;
+    font-family: "Computer-Modern-Mono", "Arial", sans-serif;
+    background: #d9d9d9;
+    color: black;
+    font-size: 12pt;
+}
+
+#log-messages .message div.content {
+    padding: 7px;
+}
+
+#log-messages .message div.content:empty {
+    padding: 0px;
+}
+
+#log-messages .message.error {
+    border: 2px solid red;
+}
+
+#log-messages .message.error div.title {
+    background: red;
+}
+
+#log-messages .message.warning {
+    border: 2px solid orange;
+}
+
+#log-messages .message.warning div.title {
+    background: orange;
+}
+
+#log-messages .message.info {
+    border: 2px solid blue;
+}
+
+#log-messages .message.info div.title {
+    background: blue;
+}
+
+#log-messages .message.raw-log {
+    border: 2px solid gray;
+}
+
+#log-messages .message.raw-log div.title {
+    background: gray;
+}
+
+#log-messages .message.raw-log div.content {
+    font-family: "Computer-Modern-Mono", "Arial", sans-serif;
+    font-size: 11pt;
+}
+
+#show-raw-log {
+    display: block;
+    outline: none;
+    padding: 5px 15px;
+    margin: 15px auto;
+    font-size: 15pt;
+    border-radius: 15px;
+    background: #d9d9d9;
+    cursor: pointer;
+    color: black;
+    border: none;
+}
+
+#show-raw-log:hover {
+    background: #bfbfbf;
+}
+
+.tree-actions .actions {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #2f3a4c;
+    color: white;
+}
+
+.tree-actions .actions button {
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.tree-actions .actions button:hover {
+    background-color: #495365;
+}
+
+.tree-actions .actions button img {
+    width: 20px;
+}
+
+.tree-actions #dTreeProject {
+    background: #495365;
+    color: white;
+    overflow-y: auto;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+#dTreeProject ul {
+    list-style-type: none;
+}
+
+ul#TreeProject {
+    padding: 0;
+}
+
+#dTreeProject ul li div.tree-directory {
+    padding: 5px 10px;
+    cursor: pointer;
+    text-overflow: ellipsis;
+}
+
+#dTreeProject ul li div.tree-directory:hover {
+    background: #27303f;
+}
+
+#dTreeProject ul li a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 5px 10px;
+    text-overflow: ellipsis;
+}
+
+#dTreeProject ul li div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#dTreeProject ul li div img {
+    width: 20px;
+    padding: 0px 8px 0px 0px;
+}
+
+#dTreeProject ul li div i {
+    font-size: inherit;
+    color: #fff;
+    padding: 0px 8px 0px 0px;
+}
+
+#dTreeProject ul li a:hover {
+    background: #2f3a4c;
+}
+
+#dTreeProject ul li a:hover span {
+    text-decoration: underline;
+}
+
+#dTreeProject ul div.tree-directory+ul {
+    display: none;
+    padding-left: 20px;
+}
+
+#dTreeProject ul div.tree-directory.opened+ul {
+    display: block;
+}

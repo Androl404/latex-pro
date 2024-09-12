@@ -1,0 +1,10 @@
+<?php
+
+$hostName = ""; // put 'localhost' or the name of the server containing your database
+$dbUser = ""; // put your database user name
+$dbPassword = ""; // put the password of your database user
+$dbName = ""; // put the name of your database
+$conn = mysqli_connect($hostName, $dbUser, $dbPassword, $dbName);
+if (!$conn) {
+    die("Something went wrong;");
+}

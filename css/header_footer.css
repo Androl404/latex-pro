@@ -1,0 +1,158 @@
+/* HEADER */
+header {
+    background: #1b222c;
+    color: white;
+    padding: 0px;
+    display: flex;
+}
+
+header .logo .latex-pro {
+    font-size: 30pt;
+    padding: 0;
+    margin-left: 10px;
+}
+
+header .logo {
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+header .logo a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+header .account {
+    margin-top: 10px;
+}
+
+header .account ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+
+header .account .button {
+    margin-right: 20px;
+    padding: 5px 10px;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-family: "Computer-Modern-Bold", "Arial", sans-serif;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    height: fit-content;
+}
+
+header .account .button a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+
+header .account .button:hover a {
+    color: black;
+}
+
+header .account .button:hover {
+    background: white;
+    color: black;
+}
+
+header .account .button .sub-menu {
+    position: absolute;
+    display: none;
+    padding: 0;
+    background: white;
+    right: 20px;
+    top: 49px;
+    border-radius: 2px;
+    width: fit-content;
+    box-shadow: 0px 0px 20px gray;
+}
+
+header .account .button .sub-menu a {
+    padding: 5px 10px;
+    border-bottom: 1px solid lightgray;
+    margin: 0;
+    display: block;
+}
+
+header .account .button .sub-menu li:first-child {
+    padding: 5px 10px;
+    border-bottom: 1px solid lightgray;
+    margin: 0;
+    cursor: default;
+}
+
+header .account .button .sub-menu a:hover {
+    color: white;
+    background: #1b222c;
+}
+
+header .account .button:hover .sub-menu {
+    display: block;
+}
+
+/* FOOTER */
+footer {
+    background-color: #1b222c;
+    display: flex;
+    padding: 100px 0px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .logo {
+    margin: 0px 50px;
+    text-wrap: nowrap;
+}
+
+footer .logo a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .logo .latex-pro {
+    font-size: 30pt;
+    padding: 0;
+    margin-left: 10px;
+    color: white;
+}
+
+footer div.mentions div.infos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer div.mentions div.infos div {
+    margin: 20px;
+}
+
+footer div.mentions div.infos div a {
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px;
+}
+
+footer div.mentions div.infos div a:hover {
+    background: #2f3a4c;
+    text-decoration: underline;
+}
+
+footer div.copyright {
+    text-align: center;
+}
+
+footer div.copyright a {
+    color: white;
+    text-decoration: none;
+    font-family: "Computer-Modern-Mono", "Arial", sans-serif;
+    font-size: 14pt;
+    text-wrap: wrap;
+}
+

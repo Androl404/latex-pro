@@ -1,0 +1,91 @@
+html {
+    top: 0;
+    bottom: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Computer-Modern-Regular", "Arial", sans-serif;
+    font-size: 13pt;
+    background-color: #f4f5f6;
+}
+
+p {
+    text-align: justify;
+}
+
+.logo-icon {
+    width: 60px;
+}
+
+/* CONTENT */
+#content {
+    display: flex;
+    width: 100%;
+    min-height: 95vh;
+}
+
+.nav {
+    background-color: #2f3a4c;
+    padding: 20px 0px;
+    font-size: 14pt;
+    color: #fff;
+    width: 400px;
+}
+
+.nav .nav-categories {
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.nav .nav-categories a {
+    padding: 6px 20px;
+    color: white;
+    text-decoration-line: none;
+    display: block;
+}
+
+.nav .nav-categories a:hover {
+    background-color: #27303f;
+}
+
+.nav .nav-categories.active a {
+    background: #1b222c;
+}
+
+#content .index {
+    padding: 30px;
+    width: 100%;
+}
+
+#content .index h2 {
+    margin: 0;
+    margin-right: 30px;
+}
+
+#content .index .new-project {
+    display: flex;
+    align-items: center;
+}
+
+.new-project input {
+    border: none;
+    border-bottom: 2px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 13pt;
+    font-family: "Computer-Modern-Regular", "Arial", sans-serif;
+}
+
+.new-project input:focus,
+.new-project input:hover {
+    border-bottom: 2px solid purple;
+}
+
+#content .space {
+    height: 30px;
+}
+

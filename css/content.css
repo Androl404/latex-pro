@@ -1,0 +1,118 @@
+#content-doc {
+    margin: 50px;
+    display: grid;
+    justify-items: center;
+}
+
+#content-doc p {
+    max-width: 1000px;
+    text-wrap: wrap;
+    text-align: justify;
+}
+
+#content-doc ul {
+    max-width: 1000px;
+    text-wrap: wrap;
+    text-align: justify;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    width: 500px;
+}
+
+.input-box label {
+    padding: 5px 5px 5px 0px;
+    font-family: "Computer-Modern-Bold", "Arial", sans-serif;
+}
+
+.input-box textarea,
+.input-box input {
+    border: none;
+    border-bottom: 2px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    font-size: 16pt;
+    font-family: "Computer-Modern-Regular", "Arial", sans-serif;
+}
+
+.input-box textarea:focus,
+.input-box input:focus {
+    border-bottom: 2px solid purple;
+}
+
+.submit-button {
+    margin: 20px 0px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(213, 137, 137, 1) 0%, rgba(10, 0, 186, 1) 27%, rgba(175, 19, 138, 1) 59%, rgba(156, 0, 255, 1) 100%);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-family: "Computer-Modern-Bold", "Arial", sans-serif;
+    font-size: 20pt;
+    overflow: hidden;
+    transition: all 0.1s ease-in-out;
+    max-width: 500px;
+}
+
+.submit-button:hover {
+    transform: scale(1.05);
+}
+
+#content-doc a.archives {
+    font-size: 15pt;
+    font-family: "Computer-Modern-Mono", "Arial", sans-serif;
+    margin: 10px;
+    display: inline-block;
+}
+
+#content-doc form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+a.mail {
+    text-decoration: none;
+    font-family: "Computer-Modern-Mono", "Arial", sans-serif;
+    font-size: 14pt;
+}
+
+nav#toc {
+    padding: 15px 30px;
+    border: 1px solid #adad85;
+    background: #ebebe0;
+    border-radius: 20px;
+}
+
+nav#toc a {
+    color: #000066;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+nav#toc a:hover {
+    text-decoration: underline;
+    background: #dedddd;
+}
+
+.key-short {
+    padding: 0px 5px;
+    line-height: 190%;
+    margin: 5px 0px;
+    border-radius: 6px;
+    border: 1px solid gray;
+    background-color: #d6d6c2;
+    font-family: "Computer-Modern-Mono", "Arial", sans-serif;
+}
+
