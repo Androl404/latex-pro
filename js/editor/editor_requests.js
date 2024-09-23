@@ -11,6 +11,8 @@ const requests_content = {
                     window.clearTimeout(saveEvent);
                     saveEvent = setTimeout(saveFile, 3000);
                 });
+                updateFileStatus('Saved', 'green');
+                window.clearTimeout(saveEvent);
             } else {
                 updateFileStatus("Error on load!", 'red');
             }

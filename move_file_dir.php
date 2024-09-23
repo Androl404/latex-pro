@@ -19,15 +19,12 @@ if (!isset($_SESSION["user_name"])) {
         if (empty($to_move) or !$to_move or empty($destination) or !$destination) {
             sendResponseCodeAndDie(400, "Bad request");
         }
-        if (str_contains($to_move, "..") or str_contains($destination, "..")) {
+        if (str_contains($to_move, "..") or str_contains($destination, "..") or str_contains($destination, ";") or str_contains($destination, "&")) {
             sendResponseCodeAndDie(403, "Forbidden");
         }
         if (str_starts_with($to_move, "/")) {
             $to_move = mb_substr($to_move, 1);
         }
-        /* if (str_starts_with($destination, "/")) { */
-        /*     $destination = mb_substr($destination, 1); */
-        /* } */
         if (userHasAccess($_SESSION['id'], $projectId, $conn)) {
             // `mv projects/{$projectId}/{$to_move} projects/{$projectId}/{$destination}`; # the solution was so simple
             $result = array();
