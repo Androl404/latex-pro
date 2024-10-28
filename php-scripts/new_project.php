@@ -22,7 +22,7 @@ if (!isset($_SESSION["user_name"])) {
         show_errors_and_die($errors, "../index.php", "project-creation-failed");
         exit();
     }
-    if (check_file_uploaded_length($project_name)) {
+    if (check_file_uploaded_length($project_name, 100)) {
         array_push($errors, "project-name-invalid");
         show_errors_and_die($errors, "../index.php", "project-creation-failed");
         exit();

@@ -26,12 +26,9 @@
     color: white;
 }
 
-.existing-projects td a i {
+.existing-projects td i {
     font-size: 20pt; /* To change the size of the actions icons for index.php, archived.php, recycle-bin.php */
-}
-
-.existing-projects td a i {
     color: #000;
+    cursor: pointer;
 }
-
 

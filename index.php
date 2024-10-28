@@ -19,12 +19,15 @@ if (!isset($_SESSION["user_name"])) {
     <link rel="stylesheet" href="css/latex.css">
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/editor/toast_notification.css">
     <link rel="icon" href="img/favicon/icon_128.png" />
     <link rel="stylesheet" href="modules/boxicons-2.1.4/css/boxicons.min.css">
     <script src="modules/sweetalert-2.11/sweetalert.min.js"></script>
 </head>
 
 <body>
+
+    <ul class="notifications"></ul>
 
     <?php require("header.php"); ?>
 
@@ -135,9 +138,7 @@ if (!isset($_SESSION["user_name"])) {
                         <td><?php echo $rows['creation_date']; ?></td>
                         <td><?php echo $rows['last_opened']; ?></td>
                         <td><?php echo $rows['last_saved']; ?></td>
-                        <td><a href="php-scripts/delete_project.php?id_project=<?php echo $rows['id_project']; ?>&target=recycle"><i class='bx bx-recycle' alt="Move to the recycle bin" title="Move to the recycle bin"></i></a> <a href="php-scripts/delete_project.php?id_project=<?php echo $rows['id_project']; ?>&target=archive"><i class='bx bx-box' alt="Archive the project" title="Archive the project"></i></a> <a href="view_archive.php?id_project=<?php echo $rows['id_project']; ?>"><i class='bx bx-time-five' alt="See all the backed-up version" title="See all the backed-up version"></i></a></td>
-                        <!-- <td><form action="php-scripts/delete_project.php" action="POST"><input type="submit" value="Delete the project" name="<?php // echo $rows['id_project']; 
-                                                                                                                                                    ?>"></input></form></td> -->
+                        <td><a href="php-scripts/delete_project.php?id_project=<?php echo $rows['id_project']; ?>&target=recycle"><i class='bx bx-recycle' alt="Move to the recycle bin" title="Move to the recycle bin"></i></a> <a href="php-scripts/delete_project.php?id_project=<?php echo $rows['id_project']; ?>&target=archive"><i class='bx bx-box' alt="Archive the project" title="Archive the project"></i></a> <a href="view_archive.php?id_project=<?php echo $rows['id_project']; ?>"><i class='bx bx-time-five' alt="See all the backed-up version" title="See all the backed-up version"></i></a> <i class='bx bx-rename rename-project' idproject="<?php echo $rows['id_project']?>" title="Rename the project" alt="Rename the project"></i></td>
                     </tr>
                 <?php
                 }
@@ -148,6 +149,11 @@ if (!isset($_SESSION["user_name"])) {
     </div>
 
     <?php require("footer.php"); ?>
+
+    <script type="text/javascript" src="modules/jquery-3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/toast_notification.js"></script>
+    <script type="text/javascript" src="js/editor/editor_requests.js"></script>
+    <script type="text/javascript" src="js/rename_project.js"></script>
 
 </body>
 

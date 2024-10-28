@@ -35,7 +35,7 @@ if (!isset($_SESSION["user_name"])) {
                     if (!check_file_uploaded_name($_FILES['uploadedFile']['name'][$i])) {
                         sendResponseCodeAndDie(400, "File name invalid");
                     }
-                    if (check_file_uploaded_length($_FILES['uploadedFile']['name'][$i])) {
+                    if (check_file_uploaded_length($_FILES['uploadedFile']['name'][$i], 255)) {
                         sendResponseCodeAndDie(400, "File name is too long");
                     }
                     if ($_FILES['uploadedFile']['error'][$i] != UPLOAD_ERR_OK) {

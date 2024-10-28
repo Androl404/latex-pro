@@ -34,8 +34,13 @@ const removeToast = (toast) => {
 }
 
 const createToast = (id, textArg, time) => {
-    var success_info = document.getElementById("success-info-toast").checked;
-    var error_warning = document.getElementById("error-warning-toast").checked;
+    if (!document.getElementById("success-info-toast") || !document.getElementById("error-warning-toast")) {
+        var success_info = true;
+        var error_warning = true;
+    } else {
+        var success_info = document.getElementById("success-info-toast").checked;
+        var error_warning = document.getElementById("error-warning-toast").checked;
+    }
     if (((id === "success") || (id === "info")) && !success_info) {
         return;
     }

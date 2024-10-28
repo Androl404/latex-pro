@@ -118,9 +118,9 @@ function check_file_uploaded_name($filename)
  * @param (string) $filename - Uploaded file name.
  * @author Yousef Ismaeil Cliprz.
  */
-function check_file_uploaded_length($filename)
+function check_file_uploaded_length($filename, int $lenght)
 {
-    return (bool) ((mb_strlen($filename, "UTF-8") > 225) ? true : false);
+    return (bool) ((mb_strlen($filename, "UTF-8") > $lenght) ? true : false);
 }
 
 # Functions from https://gist.github.com/bubba-h57/5117694

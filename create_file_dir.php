@@ -24,7 +24,7 @@ if (!isset($_SESSION["user_name"])) {
         // if (!check_file_uploaded_name($to_create)) {
         //     sendResponseCodeAndDie(400, "File name invalid");
         // }
-        if (check_file_uploaded_length($to_create)) {
+        if (check_file_uploaded_length($to_create, 255)) {
             sendResponseCodeAndDie(400, "File name is too long");
         }
         if (str_starts_with($to_create, "/")) {
