@@ -92,7 +92,7 @@ function getFiles(array $dir, int $projectId, string $prefixe = "")
             }
         } else {
             $next_dir = $prefixe . DIRECTORY_SEPARATOR . $key;
-            $html_folder .= "<li><div class='tree-directory'><i class='bx bxs-folder'></i><span class='bold'>$key</span></div><ul>"; 
+            $html_folder .= "<li><div class='tree-directory'><i class='bx bxs-folder'></i><span class='bold'>$key</span></div><ul>";
             $html_folder .= getFiles($values, $projectId, $next_dir);
             $html_folder .= "</ul></li>";
         }
@@ -118,9 +118,9 @@ function check_file_uploaded_name($filename)
  * @param (string) $filename - Uploaded file name.
  * @author Yousef Ismaeil Cliprz.
  */
-function check_file_uploaded_length($filename, int $lenght)
+function check_file_uploaded_length($filename, int $length)
 {
-    return (bool) ((mb_strlen($filename, "UTF-8") > $lenght) ? true : false);
+    return (bool) ((mb_strlen($filename, "UTF-8") > $length) ? true : false);
 }
 
 # Functions from https://gist.github.com/bubba-h57/5117694
