@@ -38,15 +38,14 @@ require(['vs/editor/editor.main', 'js/monaco/monaco-vim.js'], function(a, Monaco
 
     let vimMode;
     document.getElementById('vim-mode').addEventListener('change', function() {
-        if (!document.getElementById('vim-mode').checked) {
-            vimMode.dispose();
-            vimMode = null;
-            document.getElementById('vimStatus').display = "none";
-            $("#CodeBlock").height(document.body.scrollHeight - 47);
-        } else if (document.getElementById('vim-mode').checked) {
+        if (document.getElementById('vim-mode').checked) {
             document.getElementById('vimStatus').display = "block";
             vimMode = MonacoVim.initVimMode(editorCodeBlock, document.getElementById('vimStatus'));
             $("#CodeBlock").height(document.body.scrollHeight - 100);
+            // Add keybinding for `:w` to save the current file
+            MonacoVim.VimMode.Vim.defineEx('write', 'w', function() {
+                saveFile();
+            });
         } else {
             vimMode.dispose();
             vimMode = null;
