@@ -168,6 +168,7 @@ header>div.home>div:hover {
     font-size: 15pt;
     height: 30px;
     background-color: #1b222c;
+    padding-left: 8px;
     display: none;
 }
 

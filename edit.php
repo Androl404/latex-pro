@@ -206,19 +206,19 @@ if (!isset($_GET['id_project']) || !isset($_GET['file'])) {
         </h1>
         <div class="menu-compart">
             <div>
-                <a href="docs/documentation.php" class="help">
+                <a href="docs/documentation.php" class="help" target="_blank">
                     <i class='bx bxs-book' style='color:#ffffff;'></i>
                     Documentation
                 </a>
             </div>
             <div>
-                <a href="docs/shortcuts.php" class="help">
+                <a href="docs/shortcuts.php" class="help" target="_blank">
                     <i class='bx bxs-keyboard' style='color:#ffffff'></i>
                     Shortcuts
                 </a>
             </div>
             <div>
-                <a href="contact.php" class="help">
+                <a href="contact.php" class="help" target="_blank">
                     <i class='bx bxs-help-circle' style='color:#ffffff'></i>
                     Contact us
                 </a>
@@ -237,7 +237,7 @@ if (!isset($_GET['id_project']) || !isset($_GET['file'])) {
                 <button id="moveFile"><img src="img/icon/ic_fluent_arrow_move_24_filled.png" alt="Move/rename a file or a directory" title="Move/rename a file or a directory (Ctrl+Shift+M)" /></button>
                 <button id="deleteFile"><img src="img/icon/ic_fluent_delete_24_filled.png" alt="Delete a file or a directory" title="Delete a file or a directory (Ctrl+Shift+D)" /></button>
                 <button id="toggleUploadZone"><img src="img/icon/ic_fluent_arrow_upload_24.png" alt="Toggle the upload zone" title="Toggle the upload zone (Ctrl+Shift+U)" /></button>
-                <button id="cleanProject"><img src="img/icon/ic_fluent_dismiss_24.png" alt="Clean the project's files" title="Clean the project's files (Ctrl+Shift+U)" /></button>
+                <button id="cleanProject"><img src="img/icon/ic_fluent_dismiss_24.png" alt="Clean the project's files" title="Clean the project's files (Ctrl+Shift+C)" /></button>
                 <!-- <form action="" id="uploadForm" enctype="multipart/form-data" method="POST">
                     <input type="file" name="uploadedFile[]" multiple="multiple"></input>
                     <button type="submit" id="submitFilesToUpload" name="submitFilesToUpload" style="visibility: hidden;">Upload file(s)</button>
