@@ -18,7 +18,7 @@ I then decided that I shall take my revenge and I wrote LaTeX-pro during the 202
 
 ## About the code
 
-I am warning you, what you are about to see is some low quality PHP and JavaScript code which can be heavily improved. My goal was to make this software work, whitout really 
+I am warning you, what you are about to see is some low quality PHP and JavaScript code which can be heavily improved. My goal was to make this software work, while the code isn't optimal. I still implemented this software with privacy in mind and your projects are only visible to you.
 
 # How to install/use
 
