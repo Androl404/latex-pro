@@ -46,6 +46,9 @@ require(['vs/editor/editor.main', 'js/monaco/monaco-vim.js'], function(a, Monaco
             MonacoVim.VimMode.Vim.defineEx('write', 'w', function() {
                 saveFile();
             });
+            MonacoVim.VimMode.Vim.defineEx('compile', 'com', function() {
+                compileProject();
+            });
         } else {
             vimMode.dispose();
             vimMode = null;
