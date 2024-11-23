@@ -74,7 +74,7 @@ const requests_content = {
         after: function() {
             get_log_messages();
             let pdf_file = document.getElementById("file-select").value.split('/').at(-1).replace(/[^/.]+$/, "") + 'pdf';
-            document.getElementById('pdf-reader').src = `https://zeo.hopto.org/latex-pro/projects/${projectId}/` + pdf_file;
+            document.getElementById('pdf-reader').src = `${web_domain}projects/${projectId}/` + pdf_file;
             toogleCompileIcon();
             return;
         }
@@ -141,7 +141,7 @@ const requests_content = {
         error: 'An error occurred while archiving the project.',
         after: function(response) {
             let link = document.createElement('a');
-            link.href = "https://zeo.hopto.org/latex-pro/" + response;
+            link.href = web_domain + response;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);

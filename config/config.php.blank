@@ -2,4 +2,5 @@
 
 // $registration = True; # Moved to a database entry
 $super_path = ""; # In the case you use a reverse proxy, with a special web root
+$web_url = "https://example.com/"; # For the documentation and editor requests
 // $local_installation_path = "/var/www/latex-pro/latex-pro"; # Not used for now

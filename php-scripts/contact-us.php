@@ -1,6 +1,7 @@
 <?php
 /* require_once("php-scripts/functions/database_access.php"); */
 require_once("../php-scripts/functions/die.php");
+require_once("../config/config.php");
 
 session_start();
 if (!isset($_SESSION["user_name"])) {
@@ -20,7 +21,7 @@ if (!isset($_SESSION["user_name"])) {
                 'X-Mailer' => 'PHP/' . phpversion()
             );
 
-            $pre_message = "This message is coming from the contact page from LaTeX-pro (<https://zeo.hopto.org/latex-pro/>).\nFrom: " . $_SESSION['full_name'] . "\nEmail: " . $_SESSION['email'] . "\nSend date: " . date("Y-m-d H:i:s") . "\n\nMessage:\n";
+            $pre_message = "This message is coming from the contact page from LaTeX-pro (<$web_url>).\nFrom: " . $_SESSION['full_name'] . "\nEmail: " . $_SESSION['email'] . "\nSend date: " . date("Y-m-d H:i:s") . "\n\nMessage:\n";
             $return_code = mail($to, $subject, $pre_message . $message, $headers);
             if (!$return_code) {
                 array_push($errors, "went-wrong");

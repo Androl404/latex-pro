@@ -11,6 +11,7 @@ if (!isset($_GET['id_project']) || !isset($_GET['file'])) {
     exit();
 }
 
+require_once("config/config.php")
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +33,9 @@ if (!isset($_GET['id_project']) || !isset($_GET['file'])) {
 
     <link rel="stylesheet" data-name="vs/editor/editor.main" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.49.0/min/vs/editor/editor.main.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <script type="text/javascript">
+        var web_domain = "<?php echo $web_url; ?>";
+    </script>
     <script type="text/javascript">
         var require = {
             paths: {

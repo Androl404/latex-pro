@@ -87,7 +87,7 @@ document.getElementById("view-log").addEventListener("click", function() {
 
 document.querySelector("header>div.home>div").addEventListener("click", function() {
     var link = document.createElement('a');
-    link.href = 'https://zeo.hopto.org/latex-pro/index.php';
+    link.href = `${web_domain}index.php`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -97,10 +97,10 @@ document.querySelector("header>div.home>div").addEventListener("click", function
 document.getElementById("pdf-download").addEventListener("click", function() {
     $.ajax({
         type: 'HEAD',
-        url: 'https://zeo.hopto.org/latex-pro/projects/' + projectId + '/main.pdf',
+        url: web_domain + 'projects/' + projectId + '/main.pdf',
         success: function() {
             var link = document.createElement('a');
-            link.href = 'https://zeo.hopto.org/latex-pro/projects/' + projectId + '/main.pdf';
+            link.href = web_domain + 'projects/' + projectId + '/main.pdf';
             link.target = '_blank';
             document.body.appendChild(link);
             link.click();
@@ -109,10 +109,10 @@ document.getElementById("pdf-download").addEventListener("click", function() {
         error: function() {
             $.ajax({
                 type: 'HEAD',
-                url: 'https://zeo.hopto.org/latex-pro/projects/' + projectId + '/' + file_to_edit.split("/").at(-1).replace(/[^/.]+$/, "") + 'pdf',
+                url: web_domain + 'projects/' + projectId + '/' + file_to_edit.split("/").at(-1).replace(/[^/.]+$/, "") + 'pdf',
                 success: function() {
                     let link = document.createElement('a');
-                    link.href = 'https://zeo.hopto.org/latex-pro/projects/' + projectId + '/' + file_to_edit.split("/").at(-1).replace(/[^/.]+$/, "") + 'pdf';
+                    link.href = web_domain +'projects/' + projectId + '/' + file_to_edit.split("/").at(-1).replace(/[^/.]+$/, "") + 'pdf';
                     link.target = '_blank';
                     document.body.appendChild(link);
                     link.click();
